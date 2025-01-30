@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Product Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styling... */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #232f3e;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        /* Categories Section */
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .category-card {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 25%;
+            cursor: pointer;
+        }
+
+        .category-card img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        /* Search Section */
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .search-bar {
+            width: 80%;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 50px 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .btn, .btn-wishlist {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover, .btn-wishlist:hover {
+            background-color: #e53d2b;
+        }
+
+        .reviews {
+            margin-top: 30px;
+        }
+
+        .review-item {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .rate-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .rate-container select {
+            padding: 5px;
+            font-size: 1em;
+        }
+
+        footer {
+            background-color: #232f3e;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Exclusive Product Collection</h1>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-container">
+        <input type="text" id="productSearch" placeholder="Search products..." class="search-bar">
+    </div>
+
+    <!-- Categories Section -->
+    <div class="categories">
+        <div class="category-card">
+            <img src="https://imgur.com/jd4raXg.jpg" alt="Electronics">             
+            <h3>Electronics</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://imgur.com/M98ntOg.jpg" alt="Fashion">
+            <h3>Fashion</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://imgur.com/SHOSl4f.jpg" alt="Home Appliances">
+            <h3>Home Appliances</h3>
+        </div>
+        <div class="category-card">
+            <img src="https://imgur.com/mUoigEb.jpg" alt="Books">
+            <h3>Books</h3>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="section-title">Shop Our Collection</div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://imgur.com/M41tFtW.jpg" alt="Luxury Watch">
+            <h2>Luxury Watch</h2>
+            <p class="price">₹20,999</p>
+            <p class="rating">⭐⭐⭐⭐☆</p>
+            <p class="description">Elegant timepiece with premium leather strap and water resistance.</p>
+            <button class="btn">Add to Cart</button>
+            <button class="btn-wishlist">Add to Wishlist</button>
+            <div class="reviews">
+                <h3>Reviews:</h3>
+                <div class="review-item">
+                    <p>"Great product, would definitely recommend!" - <b>John Doe</b></p>
+                    <p>⭐⭐⭐⭐☆</p>
+                </div>
+            </div>
+            <div class="rate-container">
+                <label for="rating">Rate this Product: </label>
+                <select id="rating">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+                <button class="btn-rate">Submit Rating</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://imgur.com/rwsVipM.jpg" alt="Smartphone X">
+            <h2>Smartphone X</h2>
+            <p class="price">₹79,999</p>
+            <p class="rating">⭐⭐⭐⭐⭐</p>
+            <p class="description">Latest model with advanced AI camera and ultra-fast processor.</p>
+            <button class="btn">Add to Cart</button>
+            <button class="btn-wishlist">Add to Wishlist</button>
+            <div class="reviews">
+                <h3>Reviews:</h3>
+                <div class="review-item">
+                    <p>"Absolutely love it! Great camera!" - <b>Jane Smith</b></p>
+                    <p>⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+            <div class="rate-container">
+                <label for="rating">Rate this Product: </label>
+                <select id="rating">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+                <button class="btn-rate">Submit Rating</button>
+            </div>
+        </div>
+
+        <!-- New Gaming Laptop Product -->
+        <div class="product-card">
+            <img src="https://imgur.com/Oeusuh4.jpg" alt="Gaming Laptop">
+            <h2>Gaming Laptop</h2>
+            <p class="price">₹1,25,000</p>
+            <p class="rating">⭐⭐⭐⭐☆</p>
+            <p class="description">Powerful machine for gaming and professional tasks.</p>
+            <button class="btn">Add to Cart</button>
+            <button class="btn-wishlist">Add to Wishlist</button>
+            <div class="reviews">
+                <h3>Reviews:</h3>
+                <div class="review-item">
+                    <p>"Amazing performance, handles all games with ease!" - <b>Mark Lee</b></p>
+                    <p>⭐⭐⭐⭐☆</p>
+                </div>
+            </div>
+            <div class="rate-container">
+                <label for="rating">Rate this Product: </label>
+                <select id="rating">
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+                <button class="btn-rate">Submit Rating</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Exclusive Product Collection</p>
+    </footer>
+
+    <script>
+        // Sticky header on scroll
+        window.onscroll = function() {stickyHeader()};
+
+        var header = document.querySelector("header");
+        var sticky = header.offsetTop;
+
+        function stickyHeader() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        }
+
+        // Product Search Functionality
+        document.getElementById('productSearch').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach(card => {
+                const productName = card.querySelector('h2').innerText.toLowerCase();
+                if (productName.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
